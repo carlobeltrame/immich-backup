@@ -27,7 +27,8 @@ Follow the prompts:
 
 Test it works:
 ```powershell
-rclone ls immich-s3:your-immich-bucket --max-depth 1
+# Use Ctrl+C to cancel listing
+rclone ls immich-s3:your-immich-bucket
 ```
 
 ### 2. Create your config
