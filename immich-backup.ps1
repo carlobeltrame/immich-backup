@@ -21,7 +21,7 @@ if (-not (Test-Path $ConfigFile)) {
 }
 . $ConfigFile
 
-$LogFile = "$LocalPath\_backup.log"
+$LogFile = "$PSScriptRoot\backup.log"
 
 # ── Script ───────────────────────────────────────────────────────────────────
 
@@ -57,7 +57,7 @@ if (-not (Get-Command rclone -ErrorAction SilentlyContinue)) {
 # --transfers N  : parallel transfers
 # --log-level    : INFO shows files transferred; use DEBUG for verbose
 $RcloneArgs = @(
-    "sync",
+    "copy",
     "${Remote}:${Bucket}",
     $LocalPath,
     "--fast-list",

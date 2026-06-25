@@ -72,5 +72,5 @@ transferred, errors, and timing.
 ## Behavior
 
 - **Incremental**: only downloads files that are new or have changed (by checksum).
-- **Non-destructive**: files deleted from S3 are NOT deleted locally — your backup grows over time as a full history. To mirror deletions add `--delete-during` to `$RcloneArgs` in the script (use with caution).
+- **Non-destructive**: uses `rclone copy`, so local files are never deleted — your backup grows over time as a full archive even if assets are removed from Immich.
 - **Safe to re-run**: running twice in a row will transfer nothing if nothing changed.
